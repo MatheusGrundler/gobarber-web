@@ -130,7 +130,6 @@ const Dashboard: React.FC = () => {
     );
   }, [appointments]);
 
-  console.log(appointments);
   return (
     <Container>
       <Header>
@@ -138,7 +137,14 @@ const Dashboard: React.FC = () => {
           <img src={logoImg} alt="Gobarber" />
 
           <Profile>
-            <img src={user.avatar_url} alt={user.name} />
+            <img
+              src={
+                user.avatar_url
+                  ? user.avatar_url
+                  : 'https://api.adorable.io/avatars/56/abott@adorable.png'
+              }
+              alt={user.name}
+            />
             <div>
               <span>Bem vindo,</span>
               <Link to="/profile">
